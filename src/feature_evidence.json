@@ -2,152 +2,127 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-create-a-landing-page-with-hero-section-introducing-farmai-as-an-intelligent-agriculture-platform-including-sections-for-problem-statement-solution-overview-and-key-objectives-as-described-in-the-project-documentation",
-      "featureTitle": "Create a landing page with hero section introducing FARMAI as an intelligent agriculture platform, including sections for Problem Statement, Solution Overview, and Key Objectives as described in the project documentation",
-      "files": [
-        "frontend/src/pages/LandingPage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-1"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-build-a-crop-prediction-interface-that-accepts-environmental-and-soil-parameters-temperature-humidity-rainfall-ph-nitrogen-phosphorus-potassium-and-displays-ai-recommended-crops-with-mock-prediction-logic",
-      "featureTitle": "Build a crop prediction interface that accepts environmental and soil parameters (temperature, humidity, rainfall, pH, nitrogen, phosphorus, potassium) and displays AI-recommended crops with mock prediction logic",
-      "files": [
-        "frontend/src/pages/CropPredictionPage.tsx",
-        "frontend/src/utils/cropPredictionLogic.ts"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-2"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-create-a-cultivation-cost-estimation-calculator-that-takes-crop-type-land-area-and-agricultural-inputs-seeds-fertilizers-labor-irrigation-equipment-and-calculates-total-estimated-cost-with-itemized-breakdown",
-      "featureTitle": "Create a cultivation cost estimation calculator that takes crop type, land area, and agricultural inputs (seeds, fertilizers, labor, irrigation, equipment) and calculates total estimated cost with itemized breakdown",
-      "files": [
-        "frontend/src/pages/CostCalculatorPage.tsx",
-        "frontend/src/utils/costCalculations.ts"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-3"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-build-a-profit-prediction-calculator-that-accepts-cultivation-cost-expected-yield-in-quintals-kg-and-market-price-per-unit-then-calculates-and-displays-expected-revenue-profit-loss-and-profit-margin-percentage",
-      "featureTitle": "Build a profit prediction calculator that accepts cultivation cost, expected yield (in quintals/kg), and market price per unit, then calculates and displays expected revenue, profit/loss, and profit margin percentage",
-      "files": [
-        "frontend/src/pages/ProfitCalculatorPage.tsx",
-        "frontend/src/utils/profitCalculations.ts"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-4"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-implement-a-farmer-dashboard-showing-overview-cards-for-total-crops-managed-estimated-profits-active-listings-in-marketplace-and-quick-access-to-crop-prediction-cost-estimation-and-profit-calculator-tools",
-      "featureTitle": "Implement a farmer dashboard showing overview cards for total crops managed, estimated profits, active listings in marketplace, and quick access to crop prediction, cost estimation, and profit calculator tools",
-      "files": [
-        "frontend/src/pages/DashboardPage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-5"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-create-a-direct-marketplace-interface-where-farmers-can-list-crops-for-sale-crop-name-quantity-price-location-contact-and-buyers-can-browse-available-listings-with-search-and-filter-capabilities",
-      "featureTitle": "Create a direct marketplace interface where farmers can list crops for sale (crop name, quantity, price, location, contact) and buyers can browse available listings with search and filter capabilities",
-      "files": [
-        "frontend/src/pages/MarketplacePage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-6"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-implement-navigation-system-with-links-to-home-dashboard-crop-prediction-cost-calculator-profit-calculator-and-marketplace-sections-ensuring-smooth-routing-between-all-pages",
-      "featureTitle": "Implement navigation system with links to Home, Dashboard, Crop Prediction, Cost Calculator, Profit Calculator, and Marketplace sections, ensuring smooth routing between all pages",
+      "featureId": "feature-create-a-new-authentication-home-page-that-serves-as-the-landing-page-with-three-distinct-login-signup-options-admin-login-farmer-sign-in-sign-up-and-buyer-login-sign-up",
+      "featureTitle": "Create a new authentication home page that serves as the landing page with three distinct login/signup options: Admin Login, Farmer Sign In/Sign Up, and Buyer Login/Sign Up",
       "files": [
         "frontend/src/App.tsx",
-        "frontend/src/components/Layout.tsx",
-        "frontend/src/components/Navigation.tsx"
+        "frontend/src/components/Navigation.tsx",
+        "frontend/src/pages/AuthPage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
         "shadcn-ui@1.0.0",
         "build-template-react@1.0.0",
         "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
       ],
       "testIds": [
-        "REQ-7"
+        "REQ-10"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-apply-a-cohesive-agricultural-theme-using-earth-tones-greens-browns-and-warm-neutrals-inspired-by-the-reference-images-with-professional-typography-and-consistent-spacing-throughout-the-application",
-      "featureTitle": "Apply a cohesive agricultural theme using earth tones (greens, browns, and warm neutrals) inspired by the reference images, with professional typography and consistent spacing throughout the application",
+      "featureId": "feature-implement-admin-login-form-with-email-password-fields-and-login-button-that-authenticates-admin-users",
+      "featureTitle": "Implement Admin Login form with email/password fields and login button that authenticates admin users",
       "files": [
-        "frontend/src/index.css",
-        "frontend/tailwind.config.js"
+        "frontend/src/App.tsx",
+        "frontend/src/pages/AdminDashboardPage.tsx",
+        "frontend/src/pages/AuthPage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
         "shadcn-ui@1.0.0",
         "build-template-react@1.0.0",
         "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
       ],
       "testIds": [
-        "REQ-8"
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-farmer-sign-in-and-sign-up-forms-with-email-password-fields-allowing-farmers-to-create-new-accounts-or-log-into-existing-accounts",
+      "featureTitle": "Implement Farmer Sign In and Sign Up forms with email/password fields, allowing farmers to create new accounts or log into existing accounts",
+      "files": [
+        "frontend/src/hooks/useAuth.ts",
+        "frontend/src/pages/AuthPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-buyer-login-and-sign-up-forms-with-email-password-fields-allowing-buyers-to-create-new-accounts-or-log-into-existing-accounts",
+      "featureTitle": "Implement Buyer Login and Sign Up forms with email/password fields, allowing buyers to create new accounts or log into existing accounts",
+      "files": [
+        "frontend/src/hooks/useAuth.ts",
+        "frontend/src/pages/AuthPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-application-routing-so-the-new-authentication-page-is-the-home-route-and-the-previous-landing-page-content-is-moved-to-a-different-route-or-integrated-appropriately",
+      "featureTitle": "Update the application routing so the new authentication page is the home route ('/') and the previous landing page content is moved to a different route or integrated appropriately",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Navigation.tsx",
+        "frontend/src/components/ProtectedRoute.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-session-management-to-maintain-user-authentication-state-across-page-refreshes-and-provide-logout-functionality",
+      "featureTitle": "Implement session management to maintain user authentication state across page refreshes and provide logout functionality",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Navigation.tsx",
+        "frontend/src/hooks/useAuth.ts",
+        "frontend/src/hooks/useUserProfile.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
       ],
       "confidence": "high"
     }

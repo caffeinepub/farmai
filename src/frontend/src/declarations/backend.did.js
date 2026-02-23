@@ -8,10 +8,108 @@
 
 import { IDL } from '@icp-sdk/core/candid';
 
-export const idlService = IDL.Service({});
+export const UserRole = IDL.Variant({
+  'admin' : IDL.Null,
+  'user' : IDL.Null,
+  'guest' : IDL.Null,
+});
+export const UserType = IDL.Variant({
+  'admin' : IDL.Null,
+  'buyer' : IDL.Null,
+  'farmer' : IDL.Null,
+});
+export const UserProfile = IDL.Record({
+  'userType' : UserType,
+  'name' : IDL.Opt(IDL.Text),
+  'role' : UserRole,
+  'email' : IDL.Text,
+  'passwordHash' : IDL.Text,
+});
+
+export const idlService = IDL.Service({
+  '_initializeAccessControlWithSecret' : IDL.Func([IDL.Text], [], []),
+  'assignCallerUserRole' : IDL.Func([IDL.Principal, UserRole], [], []),
+  'changeUserRole' : IDL.Func([IDL.Principal, UserType], [], []),
+  'createAdminAccount' : IDL.Func(
+      [IDL.Principal, IDL.Text, IDL.Text, IDL.Opt(IDL.Text)],
+      [],
+      [],
+    ),
+  'deleteUserAccount' : IDL.Func([IDL.Principal], [], []),
+  'getCallerUserProfile' : IDL.Func([], [IDL.Opt(UserProfile)], ['query']),
+  'getCallerUserRole' : IDL.Func([], [UserRole], ['query']),
+  'getUserProfile' : IDL.Func(
+      [IDL.Principal],
+      [IDL.Opt(UserProfile)],
+      ['query'],
+    ),
+  'isCallerAdmin' : IDL.Func([], [IDL.Bool], ['query']),
+  'isCallerBuyer' : IDL.Func([], [IDL.Bool], ['query']),
+  'isCallerFarmer' : IDL.Func([], [IDL.Bool], ['query']),
+  'listAllUsers' : IDL.Func(
+      [],
+      [IDL.Vec(IDL.Tuple(IDL.Principal, UserProfile))],
+      ['query'],
+    ),
+  'registerBuyer' : IDL.Func([IDL.Text, IDL.Text, IDL.Opt(IDL.Text)], [], []),
+  'registerFarmer' : IDL.Func([IDL.Text, IDL.Text, IDL.Opt(IDL.Text)], [], []),
+  'saveCallerUserProfile' : IDL.Func([UserProfile], [], []),
+});
 
 export const idlInitArgs = [];
 
-export const idlFactory = ({ IDL }) => { return IDL.Service({}); };
+export const idlFactory = ({ IDL }) => {
+  const UserRole = IDL.Variant({
+    'admin' : IDL.Null,
+    'user' : IDL.Null,
+    'guest' : IDL.Null,
+  });
+  const UserType = IDL.Variant({
+    'admin' : IDL.Null,
+    'buyer' : IDL.Null,
+    'farmer' : IDL.Null,
+  });
+  const UserProfile = IDL.Record({
+    'userType' : UserType,
+    'name' : IDL.Opt(IDL.Text),
+    'role' : UserRole,
+    'email' : IDL.Text,
+    'passwordHash' : IDL.Text,
+  });
+  
+  return IDL.Service({
+    '_initializeAccessControlWithSecret' : IDL.Func([IDL.Text], [], []),
+    'assignCallerUserRole' : IDL.Func([IDL.Principal, UserRole], [], []),
+    'changeUserRole' : IDL.Func([IDL.Principal, UserType], [], []),
+    'createAdminAccount' : IDL.Func(
+        [IDL.Principal, IDL.Text, IDL.Text, IDL.Opt(IDL.Text)],
+        [],
+        [],
+      ),
+    'deleteUserAccount' : IDL.Func([IDL.Principal], [], []),
+    'getCallerUserProfile' : IDL.Func([], [IDL.Opt(UserProfile)], ['query']),
+    'getCallerUserRole' : IDL.Func([], [UserRole], ['query']),
+    'getUserProfile' : IDL.Func(
+        [IDL.Principal],
+        [IDL.Opt(UserProfile)],
+        ['query'],
+      ),
+    'isCallerAdmin' : IDL.Func([], [IDL.Bool], ['query']),
+    'isCallerBuyer' : IDL.Func([], [IDL.Bool], ['query']),
+    'isCallerFarmer' : IDL.Func([], [IDL.Bool], ['query']),
+    'listAllUsers' : IDL.Func(
+        [],
+        [IDL.Vec(IDL.Tuple(IDL.Principal, UserProfile))],
+        ['query'],
+      ),
+    'registerBuyer' : IDL.Func([IDL.Text, IDL.Text, IDL.Opt(IDL.Text)], [], []),
+    'registerFarmer' : IDL.Func(
+        [IDL.Text, IDL.Text, IDL.Opt(IDL.Text)],
+        [],
+        [],
+      ),
+    'saveCallerUserProfile' : IDL.Func([UserProfile], [], []),
+  });
+};
 
 export const init = ({ IDL }) => { return []; };

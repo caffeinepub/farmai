@@ -1,16 +1,18 @@
 # Specification
 
 ## Summary
-**Goal:** Build FARMAI, a frontend-only intelligent agriculture platform that helps farmers with crop predictions, cost estimation, profit calculations, and a direct marketplace.
+**Goal:** Add authentication system with admin, farmer, and buyer login/signup as the home page.
 
 **Planned changes:**
-- Create landing page with hero section, problem statement, solution overview, and key objectives
-- Build crop prediction interface accepting 7 environmental/soil parameters with mock AI recommendations
-- Implement cultivation cost calculator with itemized breakdown for seeds, fertilizers, labor, irrigation, and equipment
-- Create profit prediction calculator showing revenue, profit/loss, and margin percentage
-- Build farmer dashboard with overview metrics and quick access to tools
-- Implement direct marketplace where farmers list crops and buyers can search/filter listings
-- Add navigation system connecting all pages (Home, Dashboard, Crop Prediction, Cost Calculator, Profit Calculator, Marketplace)
-- Apply agricultural theme with earth tones (greens, browns, warm neutrals) throughout
+- Create new authentication home page with three distinct sections: Admin Login, Farmer Sign In/Sign Up, and Buyer Login/Sign Up
+- Implement Admin Login form with email/password authentication
+- Implement Farmer Sign In and Sign Up forms with toggle between login and registration
+- Implement Buyer Login and Sign Up forms with toggle between login and registration
+- Create backend data structures and functions to store user accounts with distinct user types (admin, farmer, buyer)
+- Implement password hashing and secure credential storage in backend
+- Update application routing so authentication page becomes the home route ('/')
+- Implement session management to maintain authentication state across page refreshes
+- Add logout functionality for authenticated users
+- Add route protection to redirect unauthenticated users to authentication page
 
-**User-visible outcome:** Farmers can access a complete web platform to get crop recommendations based on soil conditions, estimate cultivation costs, predict profits, manage a dashboard, and list/browse crops in a direct marketplace—all with a cohesive agricultural design aesthetic.
+**User-visible outcome:** Users land on an authentication page where they can sign up or log in as an admin, farmer, or buyer, with their session persisting across page refreshes and access to protected routes based on their authentication status.

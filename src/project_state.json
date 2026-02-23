@@ -1,17 +1,17 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 3,
+  "projectStateVersion": 5,
   "summary": "FARMAI - An intelligent agriculture platform (React-only frontend) that provides crop prediction, cost estimation, profit calculation, and a farmer-to-buyer marketplace. Features a dashboard and website with dynamic functionality based on the provided requirements.",
   "architectural_notes": [
     "React-only implementation (no Vite, Create React App or similar)",
     "Dynamic and interactive UI components",
     "Color scheme based on provided reference images",
     "Dashboard and public website as separate views/sections",
-    "Frontend-only with simulated data (no backend integration required)"
+    "Frontend-only with simulated data (no backend integration required)",
+    "Authentication system with role-based access (admin, farmer, buyer)"
   ],
   "known_issues": [],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Hero section background with agricultural landscape showing farmland and crops (hero-background.dim_1920x1080.png)\n- Wheat crop illustration icon for crop prediction results (wheat-icon.dim_128x128.png)\n- Rice crop illustration icon for crop prediction results (rice-icon.dim_128x128.png)\n- Corn crop illustration icon for crop prediction results (corn-icon.dim_128x128.png)\n- Cotton crop illustration icon for crop prediction results (cotton-icon.dim_128x128.png)\n- Dashboard overview background with subtle agricultural pattern (dashboard-bg.dim_1600x900.png)\n- Marketplace banner showing farmers and fresh produce (marketplace-banner.dim_1400x400.png)\n- Calculator tool icon representing cost estimation (calculator-icon.dim_96x96.png)\n- Growth chart icon representing profit prediction (profit-icon.dim_96x96.png)\n- Handshake icon representing direct farmer-buyer connection (handshake-icon.dim_96x96.png)",
   "existing_features": [
     {
       "id": "feature-create-a-landing-page-with-hero-section-introducing-farmai-as-an-intelligent-agriculture-platform-including-sections-for-problem-statement-solution-overview-and-key-objectives-as-described-in-the-project-documentation",
@@ -76,6 +76,54 @@
         "REQ-8"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-create-a-new-authentication-home-page-that-serves-as-the-landing-page-with-three-distinct-login-signup-options-admin-login-farmer-sign-in-sign-up-and-buyer-login-sign-up",
+      "title": "Create a new authentication home page that serves as the landing page with three distinct login/signup options: Admin Login, Farmer Sign In/Sign Up, and Buyer Login/Sign Up",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-admin-login-form-with-email-password-fields-and-login-button-that-authenticates-admin-users",
+      "title": "Implement Admin Login form with email/password fields and login button that authenticates admin users",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-farmer-sign-in-and-sign-up-forms-with-email-password-fields-allowing-farmers-to-create-new-accounts-or-log-into-existing-accounts",
+      "title": "Implement Farmer Sign In and Sign Up forms with email/password fields, allowing farmers to create new accounts or log into existing accounts",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-buyer-login-and-sign-up-forms-with-email-password-fields-allowing-buyers-to-create-new-accounts-or-log-into-existing-accounts",
+      "title": "Implement Buyer Login and Sign Up forms with email/password fields, allowing buyers to create new accounts or log into existing accounts",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-application-routing-so-the-new-authentication-page-is-the-home-route-and-the-previous-landing-page-content-is-moved-to-a-different-route-or-integrated-appropriately",
+      "title": "Update the application routing so the new authentication page is the home route ('/') and the previous landing page content is moved to a different route or integrated appropriately",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-session-management-to-maintain-user-authentication-state-across-page-refreshes-and-provide-logout-functionality",
+      "title": "Implement session management to maintain user authentication state across page refreshes and provide logout functionality",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -120,6 +168,20 @@
       "summary": "Render generated background images, agricultural icons, and crop illustrations as static assets from frontend/public/assets/generated directory",
       "reqIds": [
         "REQ-9"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Add authentication system with admin login, farmer sign in/sign up, and buyer login/sign up as the home page",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-21",
+      "summary": "Create backend data structures and functions to store and manage user accounts with distinct user types (admin, farmer, buyer) including email, hashed password, and user role",
+      "reqIds": [
+        "REQ-14"
       ],
       "status": "pending"
     }

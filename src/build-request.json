@@ -1,201 +1,158 @@
 {
   "kind": "build_request",
-  "title": "Build FARMAI Agriculture Platform",
+  "title": "Add authentication system with admin, farmer, and buyer login/signup as home page",
   "projectName": "FARMAI",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-1",
-      "text": "Create a landing page with hero section introducing FARMAI as an intelligent agriculture platform, including sections for Problem Statement, Solution Overview, and Key Objectives as described in the project documentation",
+      "id": "REQ-10",
+      "text": "Create a new authentication home page that serves as the landing page with three distinct login/signup options: Admin Login, Farmer Sign In/Sign Up, and Buyer Login/Sign Up",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-7"
         ],
         "quotes": [
-          "FARMAI is an intelligent agriculture-based platform designed to empower farmers by combining Machine Learning with digital decision-support tools"
+          "for this can u add me up the admin login framer sign in login then buyer login sign sign as the home page"
         ]
       },
       "acceptanceCriteria": [
-        "Landing page displays hero section with FARMAI branding",
-        "Problem statement section lists the four key challenges farmers face",
-        "Solution overview explains crop prediction, cost estimation, and marketplace features",
-        "Objectives section presents all six project objectives clearly"
+        "The authentication page replaces the current landing page as the home route ('/')",
+        "Three clearly separated sections are displayed for Admin, Farmer, and Buyer authentication",
+        "Each section has appropriate visual styling matching the agricultural theme",
+        "Navigation links are updated to reflect the new authentication flow"
       ]
     },
     {
-      "id": "REQ-2",
-      "text": "Build a crop prediction interface that accepts environmental and soil parameters (temperature, humidity, rainfall, pH, nitrogen, phosphorus, potassium) and displays AI-recommended crops with mock prediction logic",
-      "target": "frontend",
+      "id": "REQ-11",
+      "text": "Implement Admin Login form with email/password fields and login button that authenticates admin users",
+      "target": "both",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-7"
         ],
         "quotes": [
-          "AI-driven crop recommendations based on environmental and soil parameters"
+          "admin login"
         ]
       },
       "acceptanceCriteria": [
-        "Form accepts all seven environmental and soil input parameters",
-        "Prediction results display recommended crops with confidence indicators",
-        "Mock ML logic provides realistic crop suggestions based on input ranges",
-        "Results show why each crop was recommended"
+        "Admin login form includes email and password input fields",
+        "Login button triggers authentication logic",
+        "Successful admin login redirects to an admin dashboard or management interface",
+        "Error messages display for invalid credentials",
+        "Admin credentials are validated against backend storage"
       ]
     },
     {
-      "id": "REQ-3",
-      "text": "Create a cultivation cost estimation calculator that takes crop type, land area, and agricultural inputs (seeds, fertilizers, labor, irrigation, equipment) and calculates total estimated cost with itemized breakdown",
-      "target": "frontend",
+      "id": "REQ-12",
+      "text": "Implement Farmer Sign In and Sign Up forms with email/password fields, allowing farmers to create new accounts or log into existing accounts",
+      "target": "both",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-7"
         ],
         "quotes": [
-          "estimates cultivation costs based on predefined agricultural inputs"
+          "framer sign in login"
         ]
       },
       "acceptanceCriteria": [
-        "Calculator accepts crop selection and land area input",
-        "Form includes fields for all five cost categories",
-        "Calculation displays itemized cost breakdown",
-        "Total cultivation cost is clearly presented"
+        "Farmer section includes toggle or tabs to switch between Sign In and Sign Up",
+        "Sign Up form collects email, password, and confirmation password with validation",
+        "Sign In form includes email and password fields",
+        "Successful farmer authentication redirects to the existing farmer dashboard",
+        "New farmer accounts are stored in backend with appropriate user type designation",
+        "Error handling for duplicate emails during signup and invalid credentials during signin"
       ]
     },
     {
-      "id": "REQ-4",
-      "text": "Build a profit prediction calculator that accepts cultivation cost, expected yield (in quintals/kg), and market price per unit, then calculates and displays expected revenue, profit/loss, and profit margin percentage",
-      "target": "frontend",
+      "id": "REQ-13",
+      "text": "Implement Buyer Login and Sign Up forms with email/password fields, allowing buyers to create new accounts or log into existing accounts",
+      "target": "both",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-7"
         ],
         "quotes": [
-          "predicts expected profit using fixed yield and market price assumptions"
+          "buyer login sign sign"
         ]
       },
       "acceptanceCriteria": [
-        "Calculator accepts cultivation cost, yield quantity, and market price inputs",
-        "Formula-based calculation: Revenue = Yield × Market Price, Profit = Revenue - Cost",
-        "Results show revenue, profit/loss amount, and profit margin percentage",
-        "Visual indicator (green/red) shows profit vs loss"
+        "Buyer section includes toggle or tabs to switch between Login and Sign Up",
+        "Sign Up form collects email, password, and confirmation password with validation",
+        "Login form includes email and password fields",
+        "Successful buyer authentication redirects to the marketplace page or a buyer-specific view",
+        "New buyer accounts are stored in backend with appropriate user type designation",
+        "Error handling for duplicate emails during signup and invalid credentials during login"
       ]
     },
     {
-      "id": "REQ-5",
-      "text": "Implement a farmer dashboard showing overview cards for total crops managed, estimated profits, active listings in marketplace, and quick access to crop prediction, cost estimation, and profit calculator tools",
+      "id": "REQ-14",
+      "text": "Create backend data structures and functions to store and manage user accounts with distinct user types (admin, farmer, buyer) including email, hashed password, and user role",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-7"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend defines user record type with fields for email, password hash, user type, and unique ID",
+        "Stable storage is used to persist user accounts across canister upgrades",
+        "Functions implemented for user registration, authentication, and role verification",
+        "Password hashing is implemented for secure credential storage",
+        "Duplicate email registration is prevented"
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Update the application routing so the new authentication page is the home route ('/') and the previous landing page content is moved to a different route or integrated appropriately",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-7"
         ],
         "quotes": [
-          "give e dash borad and website"
+          "as the home page"
         ]
       },
       "acceptanceCriteria": [
-        "Dashboard displays at least four metric cards with mock data",
-        "Quick action buttons navigate to crop prediction, cost calculator, and profit calculator",
-        "Dashboard shows recent activity or recommendations section",
-        "Layout is clean and easy to navigate"
+        "The authentication page is set as the root route ('/') in the router configuration",
+        "Navigation links are updated to reflect the new structure",
+        "The previous landing page content is accessible through a different route (e.g., '/about' or integrated after login)",
+        "Protected routes (dashboard, calculators, marketplace) require authentication to access"
       ]
     },
     {
-      "id": "REQ-6",
-      "text": "Create a direct marketplace interface where farmers can list crops for sale (crop name, quantity, price, location, contact) and buyers can browse available listings with search and filter capabilities",
-      "target": "frontend",
+      "id": "REQ-16",
+      "text": "Implement session management to maintain user authentication state across page refreshes and provide logout functionality",
+      "target": "both",
       "source": {
         "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "direct farmer-to-buyer marketplace, eliminating intermediaries and ensuring fair pricing"
+          "msg-7"
         ]
       },
       "acceptanceCriteria": [
-        "Farmers can add new crop listings with all required fields",
-        "Marketplace displays crop cards with image, name, quantity, price, and farmer location",
-        "Search and filter functionality by crop type and location",
-        "Each listing shows farmer contact information for direct communication"
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "text": "Implement navigation system with links to Home, Dashboard, Crop Prediction, Cost Calculator, Profit Calculator, and Marketplace sections, ensuring smooth routing between all pages",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Navigation menu appears on all pages",
-        "All navigation links work correctly",
-        "Active page is visually indicated in navigation",
-        "Mobile-responsive navigation menu"
-      ]
-    },
-    {
-      "id": "REQ-8",
-      "text": "Apply a cohesive agricultural theme using earth tones (greens, browns, and warm neutrals) inspired by the reference images, with professional typography and consistent spacing throughout the application",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "in colour cobination of i gave some reference iamges"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Color palette uses earth tones (greens, browns, warm neutrals) consistently",
-        "Typography is professional and readable",
-        "Spacing and layout follow consistent design system",
-        "Agricultural imagery and icons enhance the theme"
-      ]
-    },
-    {
-      "id": "REQ-9",
-      "text": "Render generated background images, agricultural icons, and crop illustrations as static assets from frontend/public/assets/generated directory",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ]
-      },
-      "acceptanceCriteria": [
-        "All generated images load from frontend/public/assets/generated",
-        "Images display correctly in their designated sections",
-        "Fallback handling for missing images"
+        "User authentication state persists across page refreshes using secure session storage",
+        "Logout button is available in the navigation for authenticated users",
+        "Logging out clears the session and redirects to the authentication home page",
+        "Protected routes redirect unauthenticated users to the authentication page"
       ]
     }
   ],
   "constraints": [
-    "Use React only, not React with Vite or other build tools",
-    "Frontend-only implementation with mock data and logic",
-    "No real Machine Learning integration, use rule-based mock predictions",
-    "All calculations must be formula-based on the frontend"
+    "Do not modify frontend/src/hooks/useInternetIdentity.ts or frontend/src/hooks/useActor.ts",
+    "Do not edit files in frontend/src/components/ui",
+    "Maintain the existing agricultural theme with earth tones and consistent styling",
+    "Keep all Motoko logic in backend/main.mo within the single-actor architecture"
   ],
   "nonGoals": [
-    "Backend API development",
-    "Real Machine Learning model integration",
-    "User authentication system",
-    "Database or data persistence",
-    "Payment processing for marketplace transactions",
-    "Real-time communication features"
+    "Integration with external authentication providers (Facebook, Google, etc.)",
+    "Two-factor authentication",
+    "Email verification or password reset functionality",
+    "Social login options",
+    "OAuth or third-party identity services beyond Internet Identity"
   ],
   "imageRequirements": {
-    "required": [
-      "Hero section background with agricultural landscape showing farmland and crops (hero-background.dim_1920x1080.png)",
-      "Wheat crop illustration icon for crop prediction results (wheat-icon.dim_128x128.png)",
-      "Rice crop illustration icon for crop prediction results (rice-icon.dim_128x128.png)",
-      "Corn crop illustration icon for crop prediction results (corn-icon.dim_128x128.png)",
-      "Cotton crop illustration icon for crop prediction results (cotton-icon.dim_128x128.png)",
-      "Dashboard overview background with subtle agricultural pattern (dashboard-bg.dim_1600x900.png)",
-      "Marketplace banner showing farmers and fresh produce (marketplace-banner.dim_1400x400.png)",
-      "Calculator tool icon representing cost estimation (calculator-icon.dim_96x96.png)",
-      "Growth chart icon representing profit prediction (profit-icon.dim_96x96.png)",
-      "Handshake icon representing direct farmer-buyer connection (handshake-icon.dim_96x96.png)"
-    ],
+    "required": [],
     "edits": []
   }
 }
