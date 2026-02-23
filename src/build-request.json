@@ -1,0 +1,201 @@
+{
+  "kind": "build_request",
+  "title": "Build FARMAI Agriculture Platform",
+  "projectName": "FARMAI",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a landing page with hero section introducing FARMAI as an intelligent agriculture platform, including sections for Problem Statement, Solution Overview, and Key Objectives as described in the project documentation",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "FARMAI is an intelligent agriculture-based platform designed to empower farmers by combining Machine Learning with digital decision-support tools"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Landing page displays hero section with FARMAI branding",
+        "Problem statement section lists the four key challenges farmers face",
+        "Solution overview explains crop prediction, cost estimation, and marketplace features",
+        "Objectives section presents all six project objectives clearly"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Build a crop prediction interface that accepts environmental and soil parameters (temperature, humidity, rainfall, pH, nitrogen, phosphorus, potassium) and displays AI-recommended crops with mock prediction logic",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "AI-driven crop recommendations based on environmental and soil parameters"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Form accepts all seven environmental and soil input parameters",
+        "Prediction results display recommended crops with confidence indicators",
+        "Mock ML logic provides realistic crop suggestions based on input ranges",
+        "Results show why each crop was recommended"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create a cultivation cost estimation calculator that takes crop type, land area, and agricultural inputs (seeds, fertilizers, labor, irrigation, equipment) and calculates total estimated cost with itemized breakdown",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "estimates cultivation costs based on predefined agricultural inputs"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Calculator accepts crop selection and land area input",
+        "Form includes fields for all five cost categories",
+        "Calculation displays itemized cost breakdown",
+        "Total cultivation cost is clearly presented"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Build a profit prediction calculator that accepts cultivation cost, expected yield (in quintals/kg), and market price per unit, then calculates and displays expected revenue, profit/loss, and profit margin percentage",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "predicts expected profit using fixed yield and market price assumptions"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Calculator accepts cultivation cost, yield quantity, and market price inputs",
+        "Formula-based calculation: Revenue = Yield × Market Price, Profit = Revenue - Cost",
+        "Results show revenue, profit/loss amount, and profit margin percentage",
+        "Visual indicator (green/red) shows profit vs loss"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Implement a farmer dashboard showing overview cards for total crops managed, estimated profits, active listings in marketplace, and quick access to crop prediction, cost estimation, and profit calculator tools",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "give e dash borad and website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Dashboard displays at least four metric cards with mock data",
+        "Quick action buttons navigate to crop prediction, cost calculator, and profit calculator",
+        "Dashboard shows recent activity or recommendations section",
+        "Layout is clean and easy to navigate"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Create a direct marketplace interface where farmers can list crops for sale (crop name, quantity, price, location, contact) and buyers can browse available listings with search and filter capabilities",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "direct farmer-to-buyer marketplace, eliminating intermediaries and ensuring fair pricing"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Farmers can add new crop listings with all required fields",
+        "Marketplace displays crop cards with image, name, quantity, price, and farmer location",
+        "Search and filter functionality by crop type and location",
+        "Each listing shows farmer contact information for direct communication"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Implement navigation system with links to Home, Dashboard, Crop Prediction, Cost Calculator, Profit Calculator, and Marketplace sections, ensuring smooth routing between all pages",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigation menu appears on all pages",
+        "All navigation links work correctly",
+        "Active page is visually indicated in navigation",
+        "Mobile-responsive navigation menu"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Apply a cohesive agricultural theme using earth tones (greens, browns, and warm neutrals) inspired by the reference images, with professional typography and consistent spacing throughout the application",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "in colour cobination of i gave some reference iamges"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Color palette uses earth tones (greens, browns, warm neutrals) consistently",
+        "Typography is professional and readable",
+        "Spacing and layout follow consistent design system",
+        "Agricultural imagery and icons enhance the theme"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Render generated background images, agricultural icons, and crop illustrations as static assets from frontend/public/assets/generated directory",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All generated images load from frontend/public/assets/generated",
+        "Images display correctly in their designated sections",
+        "Fallback handling for missing images"
+      ]
+    }
+  ],
+  "constraints": [
+    "Use React only, not React with Vite or other build tools",
+    "Frontend-only implementation with mock data and logic",
+    "No real Machine Learning integration, use rule-based mock predictions",
+    "All calculations must be formula-based on the frontend"
+  ],
+  "nonGoals": [
+    "Backend API development",
+    "Real Machine Learning model integration",
+    "User authentication system",
+    "Database or data persistence",
+    "Payment processing for marketplace transactions",
+    "Real-time communication features"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Hero section background with agricultural landscape showing farmland and crops (hero-background.dim_1920x1080.png)",
+      "Wheat crop illustration icon for crop prediction results (wheat-icon.dim_128x128.png)",
+      "Rice crop illustration icon for crop prediction results (rice-icon.dim_128x128.png)",
+      "Corn crop illustration icon for crop prediction results (corn-icon.dim_128x128.png)",
+      "Cotton crop illustration icon for crop prediction results (cotton-icon.dim_128x128.png)",
+      "Dashboard overview background with subtle agricultural pattern (dashboard-bg.dim_1600x900.png)",
+      "Marketplace banner showing farmers and fresh produce (marketplace-banner.dim_1400x400.png)",
+      "Calculator tool icon representing cost estimation (calculator-icon.dim_96x96.png)",
+      "Growth chart icon representing profit prediction (profit-icon.dim_96x96.png)",
+      "Handshake icon representing direct farmer-buyer connection (handshake-icon.dim_96x96.png)"
+    ],
+    "edits": []
+  }
+}

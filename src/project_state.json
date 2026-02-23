@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "FARMAI - An intelligent agriculture platform (React-only frontend) that provides crop prediction, cost estimation, profit calculation, and a farmer-to-buyer marketplace. Features a dashboard and website with dynamic functionality based on the provided requirements.",
+  "architectural_notes": [
+    "React-only implementation (no Vite, Create React App or similar)",
+    "Dynamic and interactive UI components",
+    "Color scheme based on provided reference images",
+    "Dashboard and public website as separate views/sections",
+    "Frontend-only with simulated data (no backend integration required)"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Hero section background with agricultural landscape showing farmland and crops (hero-background.dim_1920x1080.png)\n- Wheat crop illustration icon for crop prediction results (wheat-icon.dim_128x128.png)\n- Rice crop illustration icon for crop prediction results (rice-icon.dim_128x128.png)\n- Corn crop illustration icon for crop prediction results (corn-icon.dim_128x128.png)\n- Cotton crop illustration icon for crop prediction results (cotton-icon.dim_128x128.png)\n- Dashboard overview background with subtle agricultural pattern (dashboard-bg.dim_1600x900.png)\n- Marketplace banner showing farmers and fresh produce (marketplace-banner.dim_1400x400.png)\n- Calculator tool icon representing cost estimation (calculator-icon.dim_96x96.png)\n- Growth chart icon representing profit prediction (profit-icon.dim_96x96.png)\n- Handshake icon representing direct farmer-buyer connection (handshake-icon.dim_96x96.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-landing-page-with-hero-section-introducing-farmai-as-an-intelligent-agriculture-platform-including-sections-for-problem-statement-solution-overview-and-key-objectives-as-described-in-the-project-documentation",
+      "title": "Create a landing page with hero section introducing FARMAI as an intelligent agriculture platform, including sections for Problem Statement, Solution Overview, and Key Objectives as described in the project documentation",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-crop-prediction-interface-that-accepts-environmental-and-soil-parameters-temperature-humidity-rainfall-ph-nitrogen-phosphorus-potassium-and-displays-ai-recommended-crops-with-mock-prediction-logic",
+      "title": "Build a crop prediction interface that accepts environmental and soil parameters (temperature, humidity, rainfall, pH, nitrogen, phosphorus, potassium) and displays AI-recommended crops with mock prediction logic",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-cultivation-cost-estimation-calculator-that-takes-crop-type-land-area-and-agricultural-inputs-seeds-fertilizers-labor-irrigation-equipment-and-calculates-total-estimated-cost-with-itemized-breakdown",
+      "title": "Create a cultivation cost estimation calculator that takes crop type, land area, and agricultural inputs (seeds, fertilizers, labor, irrigation, equipment) and calculates total estimated cost with itemized breakdown",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-profit-prediction-calculator-that-accepts-cultivation-cost-expected-yield-in-quintals-kg-and-market-price-per-unit-then-calculates-and-displays-expected-revenue-profit-loss-and-profit-margin-percentage",
+      "title": "Build a profit prediction calculator that accepts cultivation cost, expected yield (in quintals/kg), and market price per unit, then calculates and displays expected revenue, profit/loss, and profit margin percentage",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-farmer-dashboard-showing-overview-cards-for-total-crops-managed-estimated-profits-active-listings-in-marketplace-and-quick-access-to-crop-prediction-cost-estimation-and-profit-calculator-tools",
+      "title": "Implement a farmer dashboard showing overview cards for total crops managed, estimated profits, active listings in marketplace, and quick access to crop prediction, cost estimation, and profit calculator tools",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-direct-marketplace-interface-where-farmers-can-list-crops-for-sale-crop-name-quantity-price-location-contact-and-buyers-can-browse-available-listings-with-search-and-filter-capabilities",
+      "title": "Create a direct marketplace interface where farmers can list crops for sale (crop name, quantity, price, location, contact) and buyers can browse available listings with search and filter capabilities",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-navigation-system-with-links-to-home-dashboard-crop-prediction-cost-calculator-profit-calculator-and-marketplace-sections-ensuring-smooth-routing-between-all-pages",
+      "title": "Implement navigation system with links to Home, Dashboard, Crop Prediction, Cost Calculator, Profit Calculator, and Marketplace sections, ensuring smooth routing between all pages",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-agricultural-theme-using-earth-tones-greens-browns-and-warm-neutrals-inspired-by-the-reference-images-with-professional-typography-and-consistent-spacing-throughout-the-application",
+      "title": "Apply a cohesive agricultural theme using earth tones (greens, browns, and warm neutrals) inspired by the reference images, with professional typography and consistent spacing throughout the application",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "AI-based crop prediction/recommendation system UI",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Cultivation cost estimation calculator",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Profit prediction calculator with yield and market price inputs",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Direct farmer-to-buyer marketplace interface",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Farmer dashboard showing key metrics and tools",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Public website landing page with project overview",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Render generated background images, agricultural icons, and crop illustrations as static assets from frontend/public/assets/generated directory",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "FARMAI",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

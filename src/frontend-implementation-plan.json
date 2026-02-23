@@ -1,0 +1,284 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "FARMAI Agriculture Platform - Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create landing page with hero section, problem statement, solution overview, and key objectives",
+      "acceptanceCriteria": [
+        "Landing page displays hero section with FARMAI branding",
+        "Problem statement section lists the four key challenges farmers face",
+        "Solution overview explains crop prediction, cost estimation, and marketplace features",
+        "Objectives section presents all six project objectives clearly"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/LandingPage.tsx",
+          "operation": "create",
+          "description": "Create landing page component with hero section using the generated image frontend/public/assets/generated/hero-background.dim_1920x1080.png as background, problem statement section listing four farmer challenges, solution overview describing AI crop prediction and marketplace features, and objectives section presenting six project goals with agricultural theming"
+        },
+        {
+          "path": "frontend/src/components/HeroSection.tsx",
+          "operation": "create",
+          "description": "Create hero section component displaying FARMAI branding with tagline, using frontend/public/assets/generated/hero-background.dim_1920x1080.png as background image with overlay, call-to-action buttons, and responsive layout"
+        },
+        {
+          "path": "frontend/src/components/ProblemSection.tsx",
+          "operation": "create",
+          "description": "Create problem statement section component listing four key challenges: unpredictable crop selection, high cultivation costs, intermediary exploitation, and lack of digital tools, with icons and descriptions"
+        },
+        {
+          "path": "frontend/src/components/SolutionSection.tsx",
+          "operation": "create",
+          "description": "Create solution overview section highlighting AI crop prediction, cost estimation calculator, profit forecasting, and direct marketplace features with visual cards"
+        },
+        {
+          "path": "frontend/src/components/ObjectivesSection.tsx",
+          "operation": "create",
+          "description": "Create objectives section displaying all six project objectives: empower farmers with AI, simplify cost management, enable profit forecasting, create direct marketplace, ensure financial transparency, and promote sustainable farming"
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Build crop prediction interface with environmental and soil parameter inputs and AI-recommended results",
+      "acceptanceCriteria": [
+        "Form accepts all seven environmental and soil input parameters",
+        "Prediction results display recommended crops with confidence indicators",
+        "Mock ML logic provides realistic crop suggestions based on input ranges",
+        "Results show why each crop was recommended"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/CropPredictionPage.tsx",
+          "operation": "create",
+          "description": "Create crop prediction page with form accepting temperature, humidity, rainfall, pH, nitrogen, phosphorus, and potassium inputs, results display area showing recommended crops with confidence scores and reasoning, using mock prediction logic"
+        },
+        {
+          "path": "frontend/src/components/CropPredictionForm.tsx",
+          "operation": "create",
+          "description": "Create form component with seven input fields for environmental and soil parameters, validation for realistic ranges, and submit button triggering prediction logic"
+        },
+        {
+          "path": "frontend/src/components/CropPredictionResults.tsx",
+          "operation": "create",
+          "description": "Create results component displaying recommended crops with crop icons from frontend/public/assets/generated/wheat-icon.dim_128x128.png, frontend/public/assets/generated/rice-icon.dim_128x128.png, frontend/public/assets/generated/corn-icon.dim_128x128.png, and frontend/public/assets/generated/cotton-icon.dim_128x128.png, confidence percentages, and explanations for each recommendation"
+        },
+        {
+          "path": "frontend/src/utils/cropPredictionLogic.ts",
+          "operation": "create",
+          "description": "Implement mock ML logic using rule-based conditions to recommend crops based on input parameter ranges, returning crop names, confidence scores, and reasoning explanations"
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create cultivation cost estimation calculator with itemized breakdown",
+      "acceptanceCriteria": [
+        "Calculator accepts crop selection and land area input",
+        "Form includes fields for all five cost categories",
+        "Calculation displays itemized cost breakdown",
+        "Total cultivation cost is clearly presented"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/CostCalculatorPage.tsx",
+          "operation": "create",
+          "description": "Create cost calculator page with form for crop type, land area, and five cost categories (seeds, fertilizers, labor, irrigation, equipment), displaying itemized breakdown and total cost with frontend/public/assets/generated/calculator-icon.dim_96x96.png"
+        },
+        {
+          "path": "frontend/src/components/CostCalculatorForm.tsx",
+          "operation": "create",
+          "description": "Create form component accepting crop selection dropdown, land area numeric input, and five cost category inputs with unit labels and validation"
+        },
+        {
+          "path": "frontend/src/components/CostBreakdown.tsx",
+          "operation": "create",
+          "description": "Create cost breakdown component displaying itemized list of all cost categories with amounts, visual chart representation, and prominent total cultivation cost display"
+        },
+        {
+          "path": "frontend/src/utils/costCalculations.ts",
+          "operation": "create",
+          "description": "Implement formula-based cost calculation logic summing all input categories and providing breakdown data structure"
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Build profit prediction calculator showing revenue, profit/loss, and margin percentage",
+      "acceptanceCriteria": [
+        "Calculator accepts cultivation cost, yield quantity, and market price inputs",
+        "Formula-based calculation: Revenue = Yield × Market Price, Profit = Revenue - Cost",
+        "Results show revenue, profit/loss amount, and profit margin percentage",
+        "Visual indicator (green/red) shows profit vs loss"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ProfitCalculatorPage.tsx",
+          "operation": "create",
+          "description": "Create profit calculator page with form accepting cultivation cost, expected yield, and market price inputs, displaying calculated revenue, profit/loss, and margin with frontend/public/assets/generated/profit-icon.dim_96x96.png and color-coded indicators"
+        },
+        {
+          "path": "frontend/src/components/ProfitCalculatorForm.tsx",
+          "operation": "create",
+          "description": "Create form component with three numeric inputs for cultivation cost, yield quantity in quintals/kg, and market price per unit with appropriate labels and validation"
+        },
+        {
+          "path": "frontend/src/components/ProfitResults.tsx",
+          "operation": "create",
+          "description": "Create profit results component displaying calculated revenue, profit/loss amount with green/red color coding, profit margin percentage, and visual indicators showing profitability status"
+        },
+        {
+          "path": "frontend/src/utils/profitCalculations.ts",
+          "operation": "create",
+          "description": "Implement formula-based profit calculation logic: Revenue = Yield × Market Price, Profit = Revenue - Cost, Margin = (Profit / Revenue) × 100, returning all calculated values"
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Implement farmer dashboard with overview cards and quick access to tools",
+      "acceptanceCriteria": [
+        "Dashboard displays at least four metric cards with mock data",
+        "Quick action buttons navigate to crop prediction, cost calculator, and profit calculator",
+        "Dashboard shows recent activity or recommendations section",
+        "Layout is clean and easy to navigate"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/DashboardPage.tsx",
+          "operation": "create",
+          "description": "Create dashboard page displaying four metric cards (total crops managed, estimated profits, active marketplace listings, recommendations count), quick action buttons linking to crop prediction, cost calculator, and profit calculator pages, and recent activity section, using frontend/public/assets/generated/dashboard-bg.dim_1600x900.png as background"
+        },
+        {
+          "path": "frontend/src/components/MetricCard.tsx",
+          "operation": "create",
+          "description": "Create reusable metric card component displaying a label, numeric value, icon, and optional change indicator for dashboard statistics"
+        },
+        {
+          "path": "frontend/src/components/QuickActions.tsx",
+          "operation": "create",
+          "description": "Create quick actions component with navigation buttons to crop prediction, cost calculator, and profit calculator pages using shadcn/ui Button components and appropriate icons"
+        },
+        {
+          "path": "frontend/src/components/RecentActivity.tsx",
+          "operation": "create",
+          "description": "Create recent activity component displaying mock list of recent actions, predictions, or marketplace activities with timestamps"
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Create direct marketplace interface for listing and browsing crops",
+      "acceptanceCriteria": [
+        "Farmers can add new crop listings with all required fields",
+        "Marketplace displays crop cards with image, name, quantity, price, and farmer location",
+        "Search and filter functionality by crop type and location",
+        "Each listing shows farmer contact information for direct communication"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/MarketplacePage.tsx",
+          "operation": "create",
+          "description": "Create marketplace page with search and filter controls, grid of crop listing cards, and button to open add listing dialog, using frontend/public/assets/generated/marketplace-banner.dim_1400x400.png as banner image and frontend/public/assets/generated/handshake-icon.dim_96x96.png for direct connection messaging"
+        },
+        {
+          "path": "frontend/src/components/AddListingDialog.tsx",
+          "operation": "create",
+          "description": "Create add listing dialog component using shadcn/ui Dialog with form accepting crop name, quantity, price, location, and contact information for farmers to create new marketplace listings"
+        },
+        {
+          "path": "frontend/src/components/CropListingCard.tsx",
+          "operation": "create",
+          "description": "Create crop listing card component displaying crop image, name, quantity, price per unit, farmer location, and contact information with call-to-action for buyers"
+        },
+        {
+          "path": "frontend/src/components/MarketplaceFilters.tsx",
+          "operation": "create",
+          "description": "Create filter controls component with search input and dropdown filters for crop type and location to refine marketplace listings display"
+        },
+        {
+          "path": "frontend/src/hooks/useMarketplaceListings.ts",
+          "operation": "create",
+          "description": "Create custom hook managing marketplace listings state, add listing functionality, search and filter logic, using local state for frontend-only mock data persistence"
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Implement navigation system with routing between all pages",
+      "acceptanceCriteria": [
+        "Navigation menu appears on all pages",
+        "All navigation links work correctly",
+        "Active page is visually indicated in navigation",
+        "Mobile-responsive navigation menu"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Configure React Router with routes for landing page (/), dashboard (/dashboard), crop prediction (/crop-prediction), cost calculator (/cost-calculator), profit calculator (/profit-calculator), and marketplace (/marketplace), wrapping routes with navigation layout"
+        },
+        {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "create",
+          "description": "Create navigation component with links to Home, Dashboard, Crop Prediction, Cost Calculator, Profit Calculator, and Marketplace, highlighting active route, using shadcn/ui navigation components with mobile-responsive menu"
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create layout wrapper component including Navigation component and outlet for page content, ensuring consistent navigation across all pages"
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Apply cohesive agricultural theme with earth tones and consistent design",
+      "acceptanceCriteria": [
+        "Color palette uses earth tones (greens, browns, warm neutrals) consistently",
+        "Typography is professional and readable",
+        "Spacing and layout follow consistent design system",
+        "Agricultural imagery and icons enhance the theme"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update global styles with agricultural earth tone color palette (greens: #2E7D32, #4CAF50, #81C784; browns: #5D4037, #795548, #A1887F; warm neutrals: #F5F5DC, #FAFAF0), professional typography settings, and consistent spacing variables using CSS custom properties"
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with custom agricultural color palette matching earth tones (primary greens, secondary browns, neutral beiges), typography scale, spacing values, and responsive breakpoints for consistent design system"
+        },
+        {
+          "path": "frontend/src/components/ThemeProvider.tsx",
+          "operation": "create",
+          "description": "Create theme provider component wrapping application with agricultural theme context, ensuring consistent styling across all components"
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Render generated images as static assets throughout the application",
+      "acceptanceCriteria": [
+        "All generated images load from frontend/public/assets/generated",
+        "Images display correctly in their designated sections",
+        "Fallback handling for missing images"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/utils/imageHelpers.ts",
+          "operation": "create",
+          "description": "Create image helper utilities providing functions to load images from frontend/public/assets/generated directory with fallback handling for missing images, returning safe image paths for all generated assets including hero-background.dim_1920x1080.png, wheat-icon.dim_128x128.png, rice-icon.dim_128x128.png, corn-icon.dim_128x128.png, cotton-icon.dim_128x128.png, dashboard-bg.dim_1600x900.png, marketplace-banner.dim_1400x400.png, calculator-icon.dim_96x96.png, profit-icon.dim_96x96.png, and handshake-icon.dim_96x96.png"
+        },
+        {
+          "path": "frontend/src/components/OptimizedImage.tsx",
+          "operation": "create",
+          "description": "Create optimized image component wrapper handling lazy loading, fallback images, and proper alt text for accessibility, used throughout the application to render generated assets"
+        }
+      ]
+    }
+  ]
+}

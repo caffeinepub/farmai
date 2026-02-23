@@ -1,0 +1,17 @@
+{
+  "frontend/src/App.tsx": "Main application component configuring TanStack Router with routes for all pages (landing, dashboard, crop prediction, cost calculator, profit calculator, marketplace) wrapped in ThemeProvider and including Toaster for notifications.",
+  "frontend/src/components/Layout.tsx": "Layout wrapper component that renders Navigation, page content via Outlet, and Footer for consistent structure across all pages.",
+  "frontend/src/components/Navigation.tsx": "Responsive navigation header with FARMAI logo, desktop and mobile menus, active route highlighting, and links to all main pages.",
+  "frontend/src/components/Footer.tsx": "Footer component with about section, quick links, contact info, and attribution to caffeine.ai with UTM tracking and dynamic year.",
+  "frontend/src/pages/LandingPage.tsx": "Landing page featuring hero section with background image, problem statement cards, solution overview, objectives grid, and call-to-action sections explaining FARMAI platform.",
+  "frontend/src/pages/DashboardPage.tsx": "Farmer dashboard displaying metric cards for crops/profits/listings, quick action buttons to tools, recent activity feed, and marketplace summary with background image.",
+  "frontend/src/pages/CropPredictionPage.tsx": "Crop prediction interface with form for 7 environmental/soil parameters, AI-powered recommendations display with crop icons, confidence scores, and reasoning explanations.",
+  "frontend/src/pages/CostCalculatorPage.tsx": "Cost estimation calculator with form for crop type, land area, and 5 cost categories, displaying itemized breakdown with percentages and total cultivation cost.",
+  "frontend/src/pages/ProfitCalculatorPage.tsx": "Profit forecasting tool accepting cultivation cost, yield, and market price inputs, calculating and displaying revenue, profit/loss with color coding, and profit margin percentage.",
+  "frontend/src/pages/MarketplacePage.tsx": "Direct marketplace interface with banner, search/filter controls, crop listing cards showing farmer details and contact info, and dialog for adding new listings.",
+  "frontend/src/utils/cropPredictionLogic.ts": "Mock ML logic using rule-based conditions on environmental/soil parameters to recommend crops (rice, wheat, corn, cotton) with confidence scores and reasoning.",
+  "frontend/src/utils/costCalculations.ts": "Formula-based cost calculation utility summing all input categories and providing itemized breakdown with percentages for cultivation expenses.",
+  "frontend/src/utils/profitCalculations.ts": "Profit calculation utility implementing formulas for revenue (yield × price), profit (revenue - cost), and profit margin percentage.",
+  "frontend/src/index.css": "Global styles with agricultural earth tone OKLCH color palette (forest greens, earth browns, warm neutrals) for both light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending theme with agricultural color tokens, Poppins/Inter font families, custom shadows, and responsive design utilities."
+}
